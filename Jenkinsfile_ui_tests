@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'ENVIRONMENT', defaultValue: 'DEV', description: 'Testing environment' )
+    }
+    triggers {
+        pollSCM('*/1 * * * *')
+    }
+    stages {
+        stage('build') {
+            steps {
+                echo "Running UI tests on ${params.ENVIRONMENT}..."
+            }
+        }
+    }
+}
