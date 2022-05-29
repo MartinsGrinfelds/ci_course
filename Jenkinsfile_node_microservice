@@ -17,41 +17,41 @@ pipeline {
                 }
             }
         }
-        stage('test-dev') {
-            steps {
-                script {
-                    test("INT")
-                }
-            }
-        }
-        stage('deploy-int') {
-            steps {
-                script {
-                    deploy("INT")
-                }
-            }
-        }
-        stage('test-int') {
-            steps {
-                script {
-                    test("INT")
-                }
-            }
-        }
-        stage('deploy-prd') {
-            steps {
-                script {
-                    deploy("INT")
-                }
-            }
-        }
-        stage('test-prd') {
-            steps {
-                script {
-                    test("INT")
-                }
-            }
-        }
+        // stage('test-dev') {
+        //     steps {
+        //         script {
+        //             test("INT")
+        //         }
+        //     }
+        // }
+        // stage('deploy-int') {
+        //     steps {
+        //         script {
+        //             deploy("INT")
+        //         }
+        //     }
+        // }
+        // stage('test-int') {
+        //     steps {
+        //         script {
+        //             test("INT")
+        //         }
+        //     }
+        // }
+        // stage('deploy-prd') {
+        //     steps {
+        //         script {
+        //             deploy("INT")
+        //         }
+        //     }
+        // }
+        // stage('test-prd') {
+        //     steps {
+        //         script {
+        //             test("INT")
+        //         }
+        //     }
+        // }
     }
 }
 
