@@ -12,33 +12,53 @@ pipeline {
         
         stage('deploy-dev') {
             steps {
-                echo "Deployment of DEV"
+                script {
+                    deploy("DEV")
+                }
             }
         }
         stage('test-dev') {
             steps {
-                echo "Testing on DEV"
+                script {
+                    test("INT")
+                }
             }
         }
         stage('deploy-int') {
             steps {
-                echo "Deployment of INT"
+                script {
+                    deploy("INT")
+                }
             }
         }
         stage('test-int') {
             steps {
-                echo "Testing on INT"
+                script {
+                    test("INT")
+                }
             }
         }
         stage('deploy-prd') {
             steps {
-                echo "Deployment of PRD"
+                script {
+                    deploy("INT")
+                }
             }
         }
         stage('test-prd') {
             steps {
-                echo "Testing on PRD"
+                script {
+                    test("INT")
+                }
             }
         }
     }
+}
+
+def deploy(String enviroment) {
+    echo "Deployment on ${environment} environment triggered..."
+}
+
+def test(String enviroment) {
+    echo "Running tests on ${environment} environment..."
 }
