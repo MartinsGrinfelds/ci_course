@@ -2,6 +2,7 @@ pipeline {
     agent any
     triggers {
         pollSCM('*/1 * * * *')
+        upstream(upstreamProjects: 'docker-base', threshold: hudson.model.Result.SUCCESS)
     }
     stages {
         stage('build') {
