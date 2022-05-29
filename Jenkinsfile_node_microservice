@@ -55,10 +55,10 @@ pipeline {
     }
 }
 
-def deploy(String enviroment) {
+def deploy(String environment) {
     echo "Deployment on ${environment} environment triggered..."
 }
 
-def test(String enviroment) {
+def test(String environment) {
     echo "Running tests on ${environment} environment..."
 }
